@@ -10,7 +10,8 @@ form.addEventListener('submit', (event) => {
       } = event.currentTarget;
     
     if(emailInput.value === '' || passwordInput.value === '') {
-        alert("EMPTY FIELD!!!");
+      alert("EMPTY FIELD!!!");
+      return;
     }
     
     console.log(`Email: ${email.value}`, `Password: ${password.value}`);

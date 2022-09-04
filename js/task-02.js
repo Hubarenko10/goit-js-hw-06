@@ -8,16 +8,22 @@ const ingredients = [
 ];
 const ulEl = document.querySelector('ul');
 
-  let ingredientsList = [];
-
-  for (const ingredient of ingredients) {
-
+let ingredientsList = ingredients.map(ingredient => {
     const liEl = document.createElement('li');
     liEl.textContent = ingredient;
     liEl.classList.add('item');
-
-    ingredientsList.push(liEl);
-
-  }
+    return liEl;
+  });
 
 ulEl.append(...ingredientsList);
+
+
+
+
+
+
+
+
+
+
+
