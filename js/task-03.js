@@ -13,28 +13,24 @@ const images = [
   },
 ];
 
-const ulEl=document.querySelector('.gallery')
-const galleryImg = images.map(image => {
-  ulEl.insertAdjacentHTML(
-    'beforeend',
-    `<li><img src = "${image.url}" alt = "${image.alt}"  width = "300" height = "200" /></li>`,
-  ulEl.style.cssText = `
-display: grid;
-list-style:none;  
-grid-template-columns: repeat(3, 1fr);
-`);
-})
-
-
-// images.forEach(image => {
-// ulEl.insertAdjacentHTML(
+// const ulEl=document.querySelector('.gallery')
+// const galleryImg = images.map(image => {
+//   ulEl.insertAdjacentHTML(
 //     'beforeend',
 //     `<li><img src = "${image.url}" alt = "${image.alt}"  width = "300" height = "200" /></li>`,
-//   );
-// });
-
-// ulEl.style.cssText = `
+//   ulEl.style.cssText = `
 // display: grid;
 // list-style:none;  
 // grid-template-columns: repeat(3, 1fr);
-// `;
+// `);
+// })
+
+const ulEl=document.querySelector('.gallery')
+const galleryImg = images.map(image => { 
+return `<li><img src = "${image.url}" alt = "${image.alt}"  width = "300" height = "200" /></li>`
+})
+ulEl.insertAdjacentHTML('beforeend', galleryImg,ulEl.style.cssText = `
+display: flex;
+list-style:none;  
+grid-template-columns: repeat(3, 1fr);
+`).join("");
