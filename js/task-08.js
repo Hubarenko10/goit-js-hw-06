@@ -13,7 +13,10 @@ form.addEventListener('submit', (event) => {
       alert("EMPTY FIELD!!!");
       return;
     }
-    
-    console.log(`Email: ${email.value}`, `Password: ${password.value}`);
+    const data = {
+      Email: email.value,
+      Password: password.value
+    }
+    console.log(data);
     event.currentTarget.reset();
 })
